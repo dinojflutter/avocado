@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../../bloc/posts_bloc.dart';
 
@@ -27,16 +28,23 @@ class _PostscreenState extends State<Postscreen> {
             return ListView.builder(
               itemCount: state.postModel.length,
               itemBuilder: (context, index) => Card(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      state.postModel[index].title.toString(),
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    Text(state.postModel[index].body.toString())
-                  ],
+                elevation: 10,
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      5.heightBox,
+                      Text(
+                        state.postModel[index].title.toString(),
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      ),
+                      5.heightBox,
+                      Text(state.postModel[index].body.toString())
+                    ],
+                  ),
                 ),
               ),
             );
